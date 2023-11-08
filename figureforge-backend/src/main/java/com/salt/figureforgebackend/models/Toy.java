@@ -20,7 +20,9 @@ public class Toy {
     private Integer Diameter;
     private Integer Height;
     private Integer rating;
+    @Column(columnDefinition = "text")
     private String description;
+    @Column(columnDefinition = "text")
     private String detail;
     @OneToMany(
             mappedBy = "toy",
