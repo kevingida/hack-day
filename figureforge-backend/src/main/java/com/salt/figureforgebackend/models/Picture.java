@@ -18,12 +18,17 @@ public class Picture {
     public Picture() {
     }
 
-    public Picture(String url) {
+    public Picture(String url, Toy toy) {
         this.url = url;
+        this.toy = toy;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUrl() {
@@ -34,4 +39,11 @@ public class Picture {
         this.url = url;
     }
 
+    public Toy getToy() {
+        return toy;
+    }
+
+    public void setToy(Toy toy) {
+        this.toy = toy;
+    }
 }

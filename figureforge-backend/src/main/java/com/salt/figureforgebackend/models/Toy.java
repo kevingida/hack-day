@@ -13,17 +13,17 @@ public class Toy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String origin;
-    private String brand;
-    private Double price;
-    private Integer width;
-    private Integer Diameter;
-    private Integer Height;
-    private Integer rating;
+    private String origin= "";
+    private String brand = "";
+    private Double price  = 0.0;
+    private Integer width = 0;
+    private Integer diameter = 0;
+    private Integer height = 0;
+    private Integer rating = 0;
     @Column(columnDefinition = "text")
-    private String description;
+    private String description = "";
     @Column(columnDefinition = "text")
-    private String detail;
+    private String detail = "";
     @OneToMany(
             mappedBy = "toy",
             cascade = CascadeType.ALL,
@@ -34,18 +34,16 @@ public class Toy {
     public Toy() {
     }
 
-    public Toy(String name, String origin, String brand, Double price, Integer width, Integer diameter, Integer height, Integer rating, String description, String detail, List<Picture> pictures) {
+    public Toy(String name, String origin, String brand, Double price, Integer width, Integer diameter, Integer height, String description, String detail) {
         this.name = name;
         this.origin = origin;
         this.brand = brand;
         this.price = price;
         this.width = width;
-        Diameter = diameter;
-        Height = height;
-        this.rating = rating;
+        this.diameter = diameter;
+        this.height = height;
         this.description = description;
         this.detail = detail;
-        this.pictures = pictures;
     }
 
     public Long getId() {
@@ -93,19 +91,19 @@ public class Toy {
     }
 
     public Integer getDiameter() {
-        return Diameter;
+        return diameter;
     }
 
     public void setDiameter(Integer diameter) {
-        Diameter = diameter;
+        this.diameter = diameter;
     }
 
     public Integer getHeight() {
-        return Height;
+        return height;
     }
 
     public void setHeight(Integer height) {
-        Height = height;
+        this.height = height;
     }
 
     public Integer getRating() {

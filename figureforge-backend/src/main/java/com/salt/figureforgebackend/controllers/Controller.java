@@ -1,9 +1,12 @@
 package com.salt.figureforgebackend.controllers;
 
+import com.salt.figureforgebackend.dtos.AddToyDto;
 import com.salt.figureforgebackend.models.Toy;
 import com.salt.figureforgebackend.services.Service;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -17,12 +20,24 @@ public class Controller {
     }
 
     @GetMapping
-    public ResponseEntity<String> test() {
-        return ResponseEntity.ok("Test toys connection");
+    public ResponseEntity<List<Toy>> test() {
+        return ResponseEntity.ok(service.getAllToys());
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Toy> testbyid(@PathVariable Long id) {
         return ResponseEntity.ok(service.getToyById(id));
+    }
+
+    @PostMapping("create")
+    ResponseEntity<Toy> addToy(
+            @RequestBody AddToyDto addToyDto) {
+        return ResponseEntity.accepted().body(service.addToy(addToyDto));
+    }
+
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> deleteCart(@PathVariable Long id) {
+        service.deleteToy(id);
+        return ResponseEntity.noContent().build();
     }
 }
