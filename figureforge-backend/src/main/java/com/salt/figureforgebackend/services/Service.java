@@ -46,10 +46,10 @@ public class Service {
         );
 
         toyRepo.save(newToy);
-
-    addToyDto.pictures().stream()
-                .map(pic -> new Picture(pic,newToy))
-                .forEach(pictureRepo::save);
+        pictureRepo.save(new Picture(addToyDto.pictures(),newToy));
+//    addToyDto.pictures().stream()
+//                .map(pic -> new Picture(pic,newToy))
+//                .forEach(pictureRepo::save);
         return toyRepo.findById(newToy.getId())
                 .orElseThrow(() -> new NoSuchElementException("Toy not found"));
     }

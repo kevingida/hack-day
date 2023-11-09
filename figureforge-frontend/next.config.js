@@ -9,8 +9,8 @@ module.exports = {
         hostname: "tsumeart-1d733.kxcdn.com",
       },
       {
-        protocol: "http",
-        hostname: "res.cloudinary.com",
+        protocol: "https",
+        hostname: "www.sideshow.com",
       },
     ],
   },

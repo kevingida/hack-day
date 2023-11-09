@@ -15,16 +15,17 @@ const Card = ({ toy }: Props) => {
     >
       <div className="w-full h-[300px] border-white flex item-center justify-center overflow-hidden">
         <Image
-          className="w-full"
-          src={toy.pictures[1].toString()}
+          className="h-full"
+          src={toy.pictures[0].toString()}
           alt="some Pic"
           width={300}
           height={500}
         />
       </div>
-
-      <h3>{toy.name}</h3>
-      <h3>$ {toy.price.toString()}</h3>
+      <div className="px-4 py-2 my-0">
+        <h3>{toy.name}</h3>
+        <h3>$ {toy.price.toString()}</h3>
+      </div>
     </Link>
   );
 };

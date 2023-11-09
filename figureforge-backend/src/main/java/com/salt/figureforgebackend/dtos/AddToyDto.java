@@ -15,6 +15,6 @@ public record AddToyDto (
     Integer height,
     String description,
     String detail,
-    List<String> pictures
+    String pictures
 ) {
 }
