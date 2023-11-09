@@ -1,6 +1,7 @@
 package com.salt.figureforgebackend.controllers;
 
 import com.salt.figureforgebackend.dtos.AddToyDto;
+import com.salt.figureforgebackend.dtos.ToyResponseDTO;
 import com.salt.figureforgebackend.models.Toy;
 import com.salt.figureforgebackend.services.Service;
 import org.springframework.http.ResponseEntity;
@@ -20,12 +21,12 @@ public class Controller {
     }
 
     @GetMapping
-    public ResponseEntity<List<Toy>> test() {
+    public ResponseEntity<List<ToyResponseDTO>> test() {
         return ResponseEntity.ok(service.getAllToys());
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Toy> testbyid(@PathVariable Long id) {
+    public ResponseEntity<ToyResponseDTO> testbyid(@PathVariable Long id) {
         return ResponseEntity.ok(service.getToyById(id));
     }
 

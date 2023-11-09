@@ -1,5 +1,6 @@
 package com.salt.figureforgebackend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class Toy {
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Picture> pictures= new ArrayList<>();
 
     public Toy() {
