@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Banner from "../Banner/Banner";
 
 const Form = () => {
   const router = useRouter();
@@ -49,90 +50,108 @@ const Form = () => {
     }
   };
   return (
-    <div className="content">
-      <h1>Add ActionFigure</h1>
-      <form onSubmit={(e) => submitHandler(e, input)} className="text-black">
-        <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />
-        <br />
-        <label>Origin:</label>
-        <input
-          type="text"
-          name="origin"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />{" "}
-        <br />
-        <label>Brand:</label>
-        <input
-          type="text"
-          name="brand"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />{" "}
-        <br />
-        <label>Price:</label>
-        <input
-          type="number"
-          name="price"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />{" "}
-        <br />
-        <label>Width:</label>
-        <input
-          type="number"
-          name="width"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />{" "}
-        <br />
-        <label>Diameter:</label>
-        <input
-          type="number"
-          name="diameter"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />{" "}
-        <br />
-        <label>Height:</label>
-        <input
-          type="number"
-          name="height"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />{" "}
-        <br />
-        <label>Description:</label>
-        <input
-          type="text"
-          name="description"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />
-        <br />
-        <label>pictures:</label>
-        <input
-          type="text"
-          name="pictures"
-          onChange={inputForm}
-          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple"
-        />{" "}
-        <br />
-        <div className="w-full h-20 bg-purple flex flex-row justify-between px-4">
-          <button onClick={() => router.push("/")} className="button">
-            <span>Cancel</span>
-          </button>
-          <button type="submit" value="submit" className="button submit">
-            <span>Submit</span>
-          </button>
-        </div>
-      </form>
+    <div className="w-full flex flex-col justify-center items-center">
+      <Banner name="Add ActionFigure" />
+      <div className="max-w-2xl my-10">
+        <form onSubmit={(e) => submitHandler(e, input)} className="">
+          <label>Name:</label>
+          <input
+            required
+            type="text"
+            name="name"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />
+          <br className="mb-4 mt-2" />
+          <label className="mt-5">Origin:</label>
+          <input
+            required
+            type="text"
+            name="origin"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />{" "}
+          <br />
+          <label>Brand:</label>
+          <input
+            required
+            type="text"
+            name="brand"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />{" "}
+          <br />
+          <label>Price:</label>
+          <input
+            required
+            type="number"
+            name="price"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />{" "}
+          <br />
+          <label>Width:</label>
+          <input
+            required
+            type="number"
+            name="width"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />{" "}
+          <br />
+          <label>Diameter:</label>
+          <input
+            required
+            type="number"
+            name="diameter"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />{" "}
+          <br />
+          <label>Height:</label>
+          <input
+            required
+            type="number"
+            name="height"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />{" "}
+          <br />
+          <label>Description:</label>
+          <input
+            required
+            type="text"
+            name="description"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />
+          <br />
+          <label>pictures:</label>
+          <input
+            required
+            type="text"
+            name="pictures"
+            onChange={inputForm}
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-purple mb-4 mt-2"
+          />{" "}
+          <br />
+          <div className="w-full h-20 flex flex-row justify-between px-4 pt-10">
+            <button
+              onClick={() => router.push("/")}
+              className=" max-h-8 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center transition ease-in-out delay-350 hover:bg-midnight hover:transition-all"
+            >
+              <span>Cancel</span>
+            </button>
+            <button
+              type="submit"
+              value="submit"
+              className=" max-h-8 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white bg-purple font-bold items-center justify-center transition ease-in-out delay-350 hover:bg-midnight hover:transition-all"
+            >
+              <span>Submit</span>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

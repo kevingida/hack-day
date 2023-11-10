@@ -26,13 +26,13 @@ const Figure = ({ params }: Props) => {
   }, []);
   if (data) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-between p-24 mx-auto w-full max-w-screen-xl">
+      <div className="flex min-h-screen flex-col items-center justify-between mx-auto w-full max-w-screen-xl">
         {data?.pictures && <Carousel slides={data.pictures} />}
         <Banner name={data!.name} />
         <Detail toy={data!} />
-        <h1>below rating</h1>
-        <h1>{data.rating.toString()}</h1>
+        <h1 className="font-bold mb-2 text-xl">Quality Rating</h1>
         <Rating
+          className="h-200 w200 mb-12"
           unratedColor="amber"
           ratedColor="amber"
           value={data.rating}

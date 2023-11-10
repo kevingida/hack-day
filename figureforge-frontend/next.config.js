@@ -12,6 +12,14 @@ module.exports = {
         protocol: "https",
         hostname: "www.sideshow.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.resingrounds.com",
+      },
+      {
+        protocol: "https",
+        hostname: "daweebstop.com",
+      },
     ],
   },
 };

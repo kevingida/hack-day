@@ -30,7 +30,7 @@ const Catalog = () => {
     fetchbackend();
   }, []);
   return (
-    <section className="grid lg:grid-cols-3 lg:gap-4">
+    <section className="grid lg:grid-cols-3 lg:gap-7 sm:flex sm:gap-3 sm:flex-col">
       {data?.map((toy) => <Card toy={toy} />)}
     </section>
   );
